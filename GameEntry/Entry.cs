@@ -47,7 +47,7 @@ namespace GameEntry
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            tick = Content.Load<Texture2D>("tick");
+            tick = Content.Load<Texture2D>("tock");
 
             //TODO: use this.Content to load your game content here
         }

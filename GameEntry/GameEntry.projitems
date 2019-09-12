@@ -17,5 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Content\tick.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Content\tock.png" />
   </ItemGroup>
 </Project>
