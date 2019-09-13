@@ -1,7 +1,7 @@
 ﻿using System;
 using GameEntry;
 
-namespace test
+namespace DesktopApp
 {
     public static class Program
     {
