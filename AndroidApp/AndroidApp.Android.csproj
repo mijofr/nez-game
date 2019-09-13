@@ -82,6 +82,11 @@
     <Folder Include="Resources\Layout\" />
   </ItemGroup>
   <ItemGroup>
+    <MonoGameContentReference Include="..\Content\Content.mgcb">
+      <Link>Content.mgcb</Link>
+    </MonoGameContentReference>
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\Drawable\Splash.png" />
