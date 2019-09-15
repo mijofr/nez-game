@@ -12,7 +12,7 @@ namespace IosApp.iOS
 
         internal static void RunGame()
         {
-            game = new Entry();
+            game = new Entry(ExitHandler);
             game.Run();
         }
 
@@ -28,5 +28,11 @@ namespace IosApp.iOS
         {
             RunGame();
         }
+
+        private static bool ExitHandler(Entry g)
+        {
+            return false;
+        }
+
     }
 }

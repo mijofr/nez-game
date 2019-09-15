@@ -16,12 +16,20 @@ namespace AndroidApp.Android
         , ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden | ConfigChanges.ScreenSize)]
     public class Activity1 : Microsoft.Xna.Framework.AndroidGameActivity
     {
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            var g = new Entry();
-            SetContentView((View)g.Services.GetService(typeof(View)));
+            var g = new Entry(ExitHandler);
+            SetContentView((View)((Microsoft.Xna.Framework.Game)g).Services.GetService(typeof(View)));
             g.Run();
+        }
+
+        private static bool ExitHandler(Entry g)
+        {
+            ((Microsoft.Xna.Framework.Game)g).Exit();
+            return true;
         }
     }
 }

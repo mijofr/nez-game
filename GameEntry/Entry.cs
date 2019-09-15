@@ -13,15 +13,18 @@ namespace GameEntry
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Entry : Game
+    public class Entry : Nez.Core
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
         private Texture2D tick;
 
-        public Entry()
+        Func<Entry, bool> ExitHandle;
+
+        public Entry(Func<Entry, bool> exitHandle)
         {
+            ExitHandle = exitHandle;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = ".";
             //graphics.IsFullScreen = true;		
@@ -64,7 +67,7 @@ namespace GameEntry
             if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                Exit ();
+                ExitHandle(this);
             }
             // TODO: Add your update logic here			
             base.Update(gameTime);
